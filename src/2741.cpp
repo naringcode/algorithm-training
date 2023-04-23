@@ -12,11 +12,9 @@ int main()
 
     cin >> n;
 
-    while (n != 0)
+    for (int i = 0; i < n; i++)
     {
-        cout << n << '\n';
-
-        n--;
+        cout << i + 1 << '\n';
     }
 
     return 0;
