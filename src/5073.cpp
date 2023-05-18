@@ -18,7 +18,7 @@ int main()
 
         for (int i = 1; i < 3; i++)
         {
-            if (max(lines[idx], lines[i]))
+            if (lines[i] > lines[idx])
             {
                 idx = i;
             }
