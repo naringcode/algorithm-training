@@ -4,13 +4,13 @@ using namespace std;
 
 int n;
 
-int main() 
+int main()
 {
     cin >> n;
-   
-    cout << n << '\n';
-   
-    cout << 1;
+
+    cout << n * n << '\n';
+
+    cout << 2;
 
     return 0;
 }
