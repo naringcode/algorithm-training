@@ -50,6 +50,5 @@ int main()
         vec.clear();
     }
 
-    
     return 0;
 }
