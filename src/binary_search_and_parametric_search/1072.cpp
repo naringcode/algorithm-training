@@ -12,6 +12,8 @@ ll r = 1'000'000'000LL;
 
 ll atLeast;
 
+// ★ 평균 구하는 쪽 100을 곱하는 부분을 앞으로 옮겼더니 잘 됨.
+
 int main()
 {
     ios_base::sync_with_stdio(false);
