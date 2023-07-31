@@ -61,3 +61,5 @@ List of Unique Numbers : 13144 (수열의 조건을 착각함)
 비숍 : 1799
 
 N-Queen : 9663
+
+Dance Dance Revolution : 2342 (외판원 순회는 최적해를 쌓아서 간다 / 이건 최적해가 맨 마지막에 결정돼서 쌓으며 갈 수 없다)
