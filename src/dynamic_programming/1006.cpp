@@ -215,7 +215,7 @@ int main()
 
             go(1);
 
-            res = min(res, both[n - 1] + 2);
+            res = min(res, both[n]);
             
             // cout << "both\n";
         }
