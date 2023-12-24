@@ -45,8 +45,6 @@ int go(int from)
     if (-1 != dp[from])
         return dp[from];
 
-    int ret = d[from];
-
     dp[from] = d[from];
 
     for (int to : adj[from])
