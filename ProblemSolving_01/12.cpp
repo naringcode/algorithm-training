@@ -20,20 +20,20 @@ int main()
 
     cin >> n;
 
-    int sum = 0;
+    int cnt = 0;
     int nxt = 9;
     int digit = 1;
 
-    while (sum + nxt < n)
+    while (cnt + nxt < n)
     {
         res += nxt * digit;
-        sum += nxt;
+        cnt += nxt;
 
-        digit++;
         nxt *= 10;
+        digit++;
     }
 
-    res += (n - sum) * digit;
+    res += (n - cnt) * digit;
 
     cout << res;
 
