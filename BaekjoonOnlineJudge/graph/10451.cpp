@@ -40,7 +40,8 @@ int main()
         ranges::for_each_n(arr, n, [](int& elem){ cin >> elem; });
         ranges::fill_n(chk, n + 1, false);
 
-        int ret = ranges::count_if(arr, arr + n, [](int elem) { return go(elem); });
+        // int ret = ranges::count_if(arr, arr + n, [](int elem) { return go(elem); });
+        int ret = ranges::count_if(arr, arr + n, go);
         println(cout, "{}", ret);
     }
 
