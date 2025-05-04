@@ -1,22 +1,18 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 int n;
 int m;
 
-int res;
-
 int main()
 {
     cin >> n >> m;
 
-    for (int i = m; i <= n; i += m)
-    {
-        res += i;
-    }
+    auto odds = views::iota(1, n + 1) | views::filter([](int elem) { return elem % m == 0; });
+    int  sum  = ranges::fold_left(odds, 0, plus{ });
 
-    cout << res;
-    
+    println("{}", sum);
+
     return 0;
 }

@@ -1,31 +1,24 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 int n;
 
-int res;
-
 int main()
 {
     cin >> n;
 
-    for (int i = 1; i <= n / 2; i++)
-    {
-        if (0 != n % i)
-            continue;
+    auto filterView = views::iota(2, n / 2 + 1) | views::filter([&](int elem) { return n % elem == 0; });
 
-        if (1 != i)
-        {
-            cout << "+";
-        }
+    print("1");
 
-        cout << i;
+    int sum = ranges::fold_left(filterView, 1, [](int lhs, int rhs) {
+        print("+{}", rhs);
 
-        res += i;
-    }
+        return lhs + rhs;
+    });
 
-    cout << "=" << res;
-    
+    print("={}", sum);
+
     return 0;
 }

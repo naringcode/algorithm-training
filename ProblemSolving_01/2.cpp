@@ -1,29 +1,23 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 int a;
 int b;
 
-int res;
-
 int main()
 {
     cin >> a >> b;
 
-    for (int i = a; i <= b; i++)
-    {
-        if (i != a)
-        {
-            cout << '+';
-        }
+    print("{}", a);
 
-        cout << i;
+    int sum = ranges::fold_left(views::iota(a + 1, b + 1), a, [](int lhs, int rhs) {
+                  print("+{}", rhs);
 
-        res += i;
-    }
+                  return lhs + rhs;
+              });
 
-    cout << '=' << res;
-    
+    println("={}", sum);
+
     return 0;
 }

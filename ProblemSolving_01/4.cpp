@@ -24,3 +24,26 @@ int main()
     
     return 0;
 }
+
+// int n;
+// 
+// vector<int> vec;
+// 
+// int main()
+// {
+//     cin >> n;
+// 
+//     for (int i : views::iota(0, n))
+//     {
+//         int temp;
+//         cin >> temp;
+// 
+//         vec.push_back(temp);
+//     }
+// 
+//     ranges::sort(vec);
+// 
+//     println("{}", vec.back() - vec.front());
+// 
+//     return 0;
+// }
