@@ -2,6 +2,7 @@
     "files.associations": {
         "ostream": "cpp",
         "print": "cpp",
-        "ranges": "cpp"
+        "ranges": "cpp",
+        "iterator": "cpp"
     }
 }
