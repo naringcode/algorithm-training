@@ -30,20 +30,20 @@ int doFind(int here)
     return disjointSet[here];
 }
 
-// a 집합을 b 집합에 연결한다.
-bool doUnion(int a, int b)
+// x 집합을 y 집합에 연결한다.
+bool doUnion(int x, int y)
 {
-    // a의 값이나 b의 값이 -1인 상황은 가정하지 않는다(두 원소 전부 집합에 속한 상태여야 함).
-    a = doFind(a); // 집합의 루트 값으로 갱신함.
-    b = doFind(b); // 집합의 루트 값으로 갱신함.
+    // x의 값과 y의 값이 전부 분리집합에 속해 있다고 가정한다.
+    x = doFind(x); // 집합의 루트 값으로 갱신함.
+    y = doFind(y); // 집합의 루트 값으로 갱신함.
 
     // 같은 집합에 속해 있다.
-    if (a == b)
+    if (x == y)
         return false;
 
-    // 합집합(b 집합의 대표 원소를 a 집합의 대표 원소에 연결)
-    // b 집합의 대표 원소를 a 집합의 대표 원소에 연결했을 뿐 경로 압축은 아직 진행하지 않은 상태이다.
-    disjointSet[b] = a; // a가 루트임.
+    // 합집합(y 집합의 대표 원소를 x 집합의 대표 원소에 연결)
+    // y 집합의 대표 원소를 x 집합의 대표 원소에 연결했을 뿐 경로 압축은 아직 진행하지 않은 상태이다.
+    disjointSet[y] = x; // x가 루트임.
 
     return true;
 }

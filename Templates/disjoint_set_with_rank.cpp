@@ -31,15 +31,15 @@ int doFind(int here)
     return disjointSet[here];
 }
 
-// a 집합을 b 집합에 연결한다.
-bool doUnion(int a, int b)
+// x 집합을 y 집합에 연결한다.
+bool doUnion(int x, int y)
 {
-    // a의 값이나 b의 값이 -1인 상황은 가정하지 않는다(두 원소 전부 집합에 속한 상태여야 함).
-    a = doFind(a); // 집합의 루트 값으로 갱신함.
-    b = doFind(b); // 집합의 루트 값으로 갱신함.
+    // x의 값과 y의 값이 전부 분리집합에 속해 있다고 가정한다.
+    x = doFind(x); // 집합의 루트 값으로 갱신함.
+    y = doFind(y); // 집합의 루트 값으로 갱신함.
 
     // 같은 집합에 속해 있다.
-    if (a == b)
+    if (x == y)
         return false;
 
     // 랭크 자체를 기록하는 과정에서 해당 값은 계속 커질 수 있지만, 반대로 작아질 일은 없다.
@@ -49,19 +49,19 @@ bool doUnion(int a, int b)
 
     // 루트 노드가 다를 경우 랭크(높이)를 비교한 다음 합친다.
     // 랭크가 낮은 트리가 높은 쪽에 붙는다(랭크가 작은 트리가 큰 쪽에 붙어야 높이가 최소화되어, Find 연산이 최적화됨).
-    if (nodeRanks[a] < nodeRanks[b]) // a의 루트 랭크 < b의 루트 랭크
+    if (nodeRanks[x] < nodeRanks[y]) // x의 루트 랭크 < y의 루트 랭크
     {
-        disjointSet[a] = b;
+        disjointSet[x] = y;
     }
-    else if (nodeRanks[a] > nodeRanks[b]) // a의 루트 랭크 > b의 루트 랭크
+    else if (nodeRanks[x] > nodeRanks[y]) // x의 루트 랭크 > y의 루트 랭크
     {
-        disjointSet[b] = a;
+        disjointSet[y] = x;
     }
-    else // if (nodeRanks[a] == nodeRanks[b]) // a의 루트 랭크 == b의 루트 랭크
+    else // if (nodeRanks[x] == nodeRanks[y]) // x의 루트 랭크 == y의 루트 랭크
     {
         // 랭크가 같으면 루트 노드의 랭크를 증가(값이 같은 것이 아닌 랭크가 같은 상황임)
-        disjointSet[b] = a; // a가 루트임.
-        nodeRanks[a]++;
+        disjointSet[y] = x; // x가 루트임.
+        nodeRanks[x]++;
     }
 
     return true;
