@@ -34,8 +34,8 @@ int doFind(int here)
 bool doUnion(int a, int b)
 {
     // a의 값이나 b의 값이 -1인 상황은 가정하지 않는다(두 원소 전부 집합에 속한 상태여야 함).
-    a = doFind(a);
-    b = doFind(b);
+    a = doFind(a); // 집합의 루트 값으로 갱신함.
+    b = doFind(b); // 집합의 루트 값으로 갱신함.
 
     // 같은 집합에 속해 있다.
     if (a == b)
