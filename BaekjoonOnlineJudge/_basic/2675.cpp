@@ -2,10 +2,11 @@
 
 using namespace std;
 
-int a;
-int b;
+int t;
+int r;
 
-char ch;
+char str[256];
+int  len;
 
 int main()
 {
@@ -13,30 +14,23 @@ int main()
     cin.tie(nullptr);
     cout.tie(nullptr);
 
-    while (true)
+    cin >> t;
+
+    for (int i = 0; i < t; i++)
     {
-        cin >> a >> ch >> b;
+        cin >> r >> str;
 
-        if (0 == a && 'W' == ch && 0 == b)
-            break;
+        len = strlen(str);
 
-        if ('W' == ch)
+        for (int j = 0; j < len; j++)
         {
-            a -= b;
-        }
-        else // if ('D' == ch)
-        {
-            a += b;
+            for (int k = 0; k < r; k++)
+            {
+                cout << str[j];
+            }
         }
 
-        if (a < -200)
-        {
-            cout << "Not allowed" << '\n';
-        }
-        else
-        {
-            cout << a << '\n';
-        }
+        cout << '\n';
     }
 
     return 0;
